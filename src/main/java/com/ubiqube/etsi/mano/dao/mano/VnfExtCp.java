@@ -25,7 +25,7 @@ import java.util.UUID;
 import com.ubiqube.etsi.mano.dao.base.ToscaEntity;
 import com.ubiqube.etsi.mano.dao.mano.pkg.ConnectionPoint;
 
-import jakarta.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;

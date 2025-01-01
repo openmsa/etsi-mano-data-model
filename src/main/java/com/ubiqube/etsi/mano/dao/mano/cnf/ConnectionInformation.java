@@ -31,7 +31,7 @@ import com.ubiqube.etsi.mano.dao.rfc7807.FailureDetails;
 import com.ubiqube.etsi.mano.service.auth.model.AuthentificationInformations;
 import com.ubiqube.etsi.mano.utils.ToStringUtil;
 
-import jakarta.annotation.Nonnull;
+import org.jspecify.annotations.NonNull;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
@@ -97,7 +97,7 @@ public class ConnectionInformation implements Auditable {
 		return ToStringUtil.toString(this);
 	}
 
-	@Nonnull
+	@NonNull
 	public Servers toServers() {
 		final Servers srv = new Servers();
 		srv.setAuthentification(getAuthentification());

@@ -26,7 +26,7 @@ import com.ubiqube.etsi.mano.dao.mano.ResourceTypeEnum;
 import com.ubiqube.etsi.mano.dao.mano.ScaleInfo;
 import com.ubiqube.etsi.mano.dao.mano.vim.PlanStatusType;
 
-import jakarta.annotation.Nonnull;
+import org.jspecify.annotations.NonNull;
 
 /**
  *
@@ -58,7 +58,7 @@ public interface Task extends ToscaEntity, Auditable {
 
 	ScaleInfo getScaleInfo();
 
-	@Nonnull
+	@NonNull
 	UUID getRemovedLiveInstance();
 
 	void setChangeType(ChangeType removed);
