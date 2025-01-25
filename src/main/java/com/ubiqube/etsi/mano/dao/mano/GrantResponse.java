@@ -147,17 +147,17 @@ public class GrantResponse implements BaseEntity, Auditable {
 	private String vnfLcmOpOccId;
 
 	@Valid
-	@ManyToMany(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
 	private Set<VimConnectionInformation> vimConnections = new LinkedHashSet<>();
 
 	@Valid
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<VimConnectionInformation> cismConnections = new LinkedHashSet<>();
 
-	@ManyToMany(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
 	private Map<String, ConnectionInformation> cirConnectionInfo = new HashMap<>();
 
-	@ManyToMany(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
 	private Map<String, ConnectionInformation> mciopRepositoryInfo = new HashMap<>();
 
 	/**
@@ -209,7 +209,7 @@ public class GrantResponse implements BaseEntity, Auditable {
 	 * resource.
 	 */
 	@Valid
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<GrantInformationExt> addResources = new LinkedHashSet<>();
 
 	/**
@@ -220,7 +220,7 @@ public class GrantResponse implements BaseEntity, Auditable {
 	 * grant request, with one entry per resource.
 	 */
 	@Valid
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<GrantInformationExt> tempResources = new LinkedHashSet<>();
 
 	/**
@@ -230,7 +230,7 @@ public class GrantResponse implements BaseEntity, Auditable {
 	 * which is related to this grant request, with one entry per resource.
 	 */
 	@Valid
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<GrantInformationExt> removeResources = new LinkedHashSet<>();
 
 	/**
@@ -240,7 +240,7 @@ public class GrantResponse implements BaseEntity, Auditable {
 	 * which is related to this grant request, with one entry per resource.
 	 */
 	@Valid
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<GrantInformationExt> updateResources = new LinkedHashSet<>();
 
 	/**
