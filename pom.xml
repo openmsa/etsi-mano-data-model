@@ -111,11 +111,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.reflections</groupId>
-			<artifactId>reflections</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>nl.jqno.equalsverifier</groupId>
 			<artifactId>equalsverifier</artifactId>
 			<scope>test</scope>
@@ -149,6 +144,11 @@
 		<dependency>
 			<groupId>com.ubiqube.mano</groupId>
 			<artifactId>mano-db-rfc7807</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.classgraph</groupId>
+			<artifactId>classgraph</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>

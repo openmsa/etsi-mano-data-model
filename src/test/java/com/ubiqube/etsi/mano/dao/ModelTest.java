@@ -38,9 +38,6 @@ import java.util.Set;
 import java.util.UUID;
 
 import org.junit.jupiter.api.Test;
-import org.reflections.Reflections;
-import org.reflections.scanners.Scanner;
-import org.reflections.scanners.Scanners;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,6 +46,10 @@ import com.ubiqube.etsi.mano.dao.mano.v2.nfvo.NsTask;
 import com.ubiqube.etsi.mano.tf.entities.NetworkPolicyTask;
 import com.ubiqube.etsi.mano.utils.ReflectionUtils;
 
+import io.github.classgraph.ClassGraph;
+import io.github.classgraph.ClassInfo;
+import io.github.classgraph.ClassInfoList;
+import io.github.classgraph.ScanResult;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import nl.jqno.equalsverifier.EqualsVerifierReport;
 import nl.jqno.equalsverifier.Warning;
@@ -57,21 +58,15 @@ class ModelTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ModelTest.class);
 
-	private final Reflections reflections;
-
-	public ModelTest() {
-		final Scanner scanner = Scanners.SubTypes.filterResultsBy(a -> true);
-		reflections = new Reflections("com.ubiqube.etsi.mano", scanner);
-	}
-
 	@Test
 	void test001() {
-		final Set<Class<? extends Object>> set = reflections.getSubTypesOf(Object.class);
-		final Map<String, Set<String>> subtype = reflections.getStore().get("SubTypes");
-		subtype.forEach((x, y) -> {
-			handle(x);
-			y.forEach(ModelTest::handle);
-		});
+		try (ScanResult scanResult = new ClassGraph()
+				.enableAllInfo()
+				.acceptPackages("com.ubiqube.etsi.mano")
+				.scan()) {
+			ClassInfoList allClasses = scanResult.getAllClasses();
+			allClasses.stream().map(ClassInfo::getName).forEach(ModelTest::handle);
+		}
 	}
 
 	private static void handle(final String x) {
