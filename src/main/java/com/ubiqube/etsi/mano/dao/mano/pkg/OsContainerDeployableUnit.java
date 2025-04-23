@@ -20,6 +20,9 @@ import java.io.Serializable;
 import java.util.Set;
 import java.util.UUID;
 
+import com.ubiqube.etsi.mano.dao.base.ToscaEntity;
+import com.ubiqube.etsi.mano.dao.mano.VduProfile;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -28,9 +31,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-
-import com.ubiqube.etsi.mano.dao.mano.VduProfile;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -42,7 +42,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class OsContainerDeployableUnit implements Serializable {
+public class OsContainerDeployableUnit implements ToscaEntity, Serializable {
 	/** Serial. */
 	private static final long serialVersionUID = 1L;
 
@@ -50,7 +50,11 @@ public class OsContainerDeployableUnit implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID id;
 
-	private String name;
+	private String toscaName;
+
+	private String toscaId;
+
+	private String state;
 
 	private String description;
 

@@ -23,6 +23,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.UUID;
 
+import com.ubiqube.etsi.mano.dao.base.ToscaEntity;
 import com.ubiqube.etsi.mano.dao.mano.vim.ImageServiceAware;
 import com.ubiqube.etsi.mano.dao.mano.vim.SoftwareImage;
 
@@ -44,7 +45,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class OsContainer implements ImageServiceAware, Serializable {
+public class OsContainer implements ImageServiceAware, ToscaEntity, Serializable {
 	/** Serial. */
 	private static final long serialVersionUID = 1L;
 
@@ -52,7 +53,11 @@ public class OsContainer implements ImageServiceAware, Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID id;
 
-	private String name;
+	private String toscaName;
+
+	private String toscaId;
+
+	private String state;
 
 	private String description;
 

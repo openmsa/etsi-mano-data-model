@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
+import com.ubiqube.etsi.mano.dao.base.ToscaEntity;
 import com.ubiqube.etsi.mano.dao.mano.vim.SoftwareImage;
 
 import jakarta.persistence.CascadeType;
@@ -42,7 +43,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class McIops implements Serializable {
+public class McIops implements ToscaEntity, Serializable {
 	/** Serial. */
 	private static final long serialVersionUID = 1L;
 
@@ -51,6 +52,10 @@ public class McIops implements Serializable {
 	private UUID id;
 
 	private String toscaName;
+
+	private String toscaId;
+
+	private String state;
 
 	@ElementCollection(fetch = FetchType.EAGER)
 	private Set<String> associatedVdu;

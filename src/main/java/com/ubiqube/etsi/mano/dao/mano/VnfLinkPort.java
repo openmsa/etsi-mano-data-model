@@ -18,13 +18,15 @@ package com.ubiqube.etsi.mano.dao.mano;
 
 import java.util.UUID;
 
+import org.jspecify.annotations.Nullable;
+
 import com.ubiqube.etsi.mano.dao.audit.Audit;
 import com.ubiqube.etsi.mano.dao.audit.AuditListener;
 import com.ubiqube.etsi.mano.dao.audit.Auditable;
 import com.ubiqube.etsi.mano.dao.base.BaseEntity;
+import com.ubiqube.etsi.mano.dao.base.ToscaEntity;
 import com.ubiqube.etsi.mano.dao.mano.pkg.ConnectionPoint;
 
-import org.jspecify.annotations.Nullable;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
@@ -42,7 +44,7 @@ import lombok.Data;
 @Entity
 @EntityListeners(AuditListener.class)
 @Data
-public class VnfLinkPort extends ConnectionPoint implements BaseEntity, Auditable {
+public class VnfLinkPort extends ConnectionPoint implements ToscaEntity, BaseEntity, Auditable {
 	/** Serial. */
 	private static final long serialVersionUID = 1L;
 

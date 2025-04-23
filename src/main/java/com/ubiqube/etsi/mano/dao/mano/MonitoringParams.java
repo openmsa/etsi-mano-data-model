@@ -22,6 +22,7 @@ import java.util.UUID;
 import com.ubiqube.etsi.mano.dao.audit.Audit;
 import com.ubiqube.etsi.mano.dao.audit.AuditListener;
 import com.ubiqube.etsi.mano.dao.audit.Auditable;
+import com.ubiqube.etsi.mano.dao.base.ToscaEntity;
 import com.ubiqube.etsi.mano.dao.mano.pm.PmType;
 
 import jakarta.persistence.Embedded;
@@ -44,7 +45,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @EntityListeners(AuditListener.class)
-public class MonitoringParams implements Auditable {
+public class MonitoringParams implements ToscaEntity, Auditable {
 	/** Serial. */
 	private static final long serialVersionUID = 1L;
 
@@ -52,7 +53,11 @@ public class MonitoringParams implements Auditable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID id;
 
-	private String name;
+	private String toscaId;
+
+	private String toscaName;
+
+	private String state;
 
 	private String value;
 

@@ -61,8 +61,6 @@ public class VnfIndicator implements ToscaEntity, Auditable {
 	/**
 	 * Used in com.ubiqube.parser.tosca.objects.tosca.policies.nfv.VnfIndicator.
 	 */
-	private String name;
-
 	private String toscaName;
 
 	private String state;
