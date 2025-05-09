@@ -16,9 +16,12 @@
  */
 package com.ubiqube.etsi.mano.dao.mano.v2;
 
+import java.util.Map;
+
 import com.ubiqube.etsi.mano.dao.audit.AuditListener;
 import com.ubiqube.etsi.mano.dao.mano.VnfCompute;
 
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.FetchType;
@@ -54,6 +57,8 @@ public class ComputeTask extends VnfTask {
 	 * Vim image Id.
 	 */
 	private String imageId;
+	@ElementCollection(fetch = FetchType.EAGER)
+	private Map<String, String> tags;
 
 	@Override
 	public VnfTask copy() {
@@ -62,6 +67,7 @@ public class ComputeTask extends VnfTask {
 		t.setVnfCompute(vnfCompute);
 		t.setFlavorId(flavorId);
 		t.setImageId(imageId);
+		t.setTags(tags);
 		return t;
 	}
 
