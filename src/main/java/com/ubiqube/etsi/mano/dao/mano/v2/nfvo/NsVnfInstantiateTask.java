@@ -18,9 +18,9 @@ package com.ubiqube.etsi.mano.dao.mano.v2.nfvo;
 
 import java.util.Set;
 
-import com.ubiqube.etsi.mano.dao.mano.ResourceTypeEnum;
 import com.ubiqube.etsi.mano.dao.mano.config.Servers;
 import com.ubiqube.etsi.mano.dao.mano.nsd.NsdVnfPackageCopy;
+import com.ubiqube.etsi.mano.dao.mano.vim.ResourceTypeEnum;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.ElementCollection;

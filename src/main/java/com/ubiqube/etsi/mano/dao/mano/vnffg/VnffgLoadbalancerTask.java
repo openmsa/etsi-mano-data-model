@@ -18,10 +18,10 @@ package com.ubiqube.etsi.mano.dao.mano.vnffg;
 
 import java.util.Set;
 
-import com.ubiqube.etsi.mano.dao.mano.ResourceTypeEnum;
 import com.ubiqube.etsi.mano.dao.mano.common.ListKeyPair;
 import com.ubiqube.etsi.mano.dao.mano.nsd.NfpDescriptor;
 import com.ubiqube.etsi.mano.dao.mano.v2.nfvo.NsTask;
+import com.ubiqube.etsi.mano.dao.mano.vim.ResourceTypeEnum;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

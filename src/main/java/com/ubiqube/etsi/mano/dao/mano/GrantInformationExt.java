@@ -23,6 +23,7 @@ import java.util.UUID;
 
 import com.ubiqube.etsi.mano.dao.base.BaseEntity;
 import com.ubiqube.etsi.mano.dao.mano.grant.SnapshotResourceDefinitionEntity;
+import com.ubiqube.etsi.mano.dao.mano.vim.ResourceTypeEnum;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;

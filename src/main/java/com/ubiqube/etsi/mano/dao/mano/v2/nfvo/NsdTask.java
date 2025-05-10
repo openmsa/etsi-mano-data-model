@@ -20,9 +20,9 @@ import java.util.Set;
 import java.util.UUID;
 
 import com.ubiqube.etsi.mano.dao.mano.NsdPackageNsdPackage;
-import com.ubiqube.etsi.mano.dao.mano.ResourceTypeEnum;
 import com.ubiqube.etsi.mano.dao.mano.VnfExtCp;
 import com.ubiqube.etsi.mano.dao.mano.config.Servers;
+import com.ubiqube.etsi.mano.dao.mano.vim.ResourceTypeEnum;
 import com.ubiqube.etsi.mano.dao.mano.vim.VimConnectionInformation;
 
 import jakarta.persistence.CascadeType;

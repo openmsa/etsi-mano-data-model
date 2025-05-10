@@ -16,13 +16,12 @@
  */
 package com.ubiqube.etsi.mano.dao.mano.alarm;
 
+import com.ubiqube.etsi.mano.dao.mano.vim.ResourceTypeEnum;
+
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-
-import com.ubiqube.etsi.mano.dao.mano.ResourceTypeEnum;
-
 import lombok.Data;
 
 @Data
