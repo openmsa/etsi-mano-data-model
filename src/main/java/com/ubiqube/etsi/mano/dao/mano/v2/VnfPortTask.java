@@ -53,6 +53,8 @@ public class VnfPortTask extends VnfTask {
 
 	private String macAddress;
 
+	private String qosPolicyId;
+
 	@Override
 	public VnfTask copy() {
 		final VnfPortTask t = new VnfPortTask();
@@ -61,6 +63,7 @@ public class VnfPortTask extends VnfTask {
 		t.setExternal(external);
 		t.setIpSubnet(ipSubnet);
 		t.setMacAddress(macAddress);
+		t.setQosPolicyId(qosPolicyId);
 		return t;
 	}
 }
